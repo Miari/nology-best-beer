@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nology-best-beer/static/css/main.eeb4ae37.css",
+    "main.js": "/nology-best-beer/static/js/main.04f8a8ff.js",
+    "static/js/787.af2d6445.chunk.js": "/nology-best-beer/static/js/787.af2d6445.chunk.js",
+    "index.html": "/nology-best-beer/index.html",
+    "main.eeb4ae37.css.map": "/nology-best-beer/static/css/main.eeb4ae37.css.map",
+    "main.04f8a8ff.js.map": "/nology-best-beer/static/js/main.04f8a8ff.js.map",
+    "787.af2d6445.chunk.js.map": "/nology-best-beer/static/js/787.af2d6445.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eeb4ae37.css",
+    "static/js/main.04f8a8ff.js"
+  ]
+}
