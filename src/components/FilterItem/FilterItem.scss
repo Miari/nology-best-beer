@@ -1,0 +1,12 @@
+.filter-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-item > label {
+  margin: 5px 10px;
+}
+
+.filter-item > input {
+  width: 10%;
+}

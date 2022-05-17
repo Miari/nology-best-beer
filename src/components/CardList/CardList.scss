@@ -1,0 +1,8 @@
+.card-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  text-align: center;
+  row-gap: 2%;
+}
+

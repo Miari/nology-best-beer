@@ -1,0 +1,26 @@
+.card {
+  min-width: 90%;
+  height: 100%;
+  border: 2px solid black;
+  margin: 10%;
+  padding: 1vh;
+  background-color: antiquewhite;
+  overflow-x: hidden;
+}
+
+.card img {
+  margin-top: 5%;
+  width: 4vh;
+  height: 10vh;
+}
+
+.name {
+  font-size: 20px;
+  color: black;
+  margin: 5% auto;
+}
+
+.description {
+  font-size: 14px;
+  color: black;
+}
