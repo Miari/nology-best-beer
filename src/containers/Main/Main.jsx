@@ -1,11 +1,12 @@
-import { buildQueries } from "@testing-library/react";
+import CardList from "../../components/CardList/CardList";
+import "./Main.scss";
 
 const Main = ({beers}) => {
   return (
-    <div>
-      {beers}
+    <div className="main-section">
+      <CardList beers={beers} />
     </div>
-  )
-}
+  );
+};
 
 export default Main;
