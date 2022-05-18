@@ -3,13 +3,7 @@ import React, { useState } from "react";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import FiltersList from "../../components/FiltersList/FiltersList";
 
-const Navbar = ({handleChange}) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleInput = (event) => {
-    const universalInput = event.target.value.toLowerCase();
-    setSearchTerm(universalInput);
-  };
+const Navbar = ({handleChange, handleInput, searchTerm}) => {
 
   return (
     <div className="navbar">

@@ -1,12 +1,14 @@
 .filter-item {
   display: flex;
   justify-content: space-between;
+  min-width: 150px;
 }
 
 .filter-item > label {
-  margin: 5px 10px;
+  margin: 5px 0;
+
 }
 
 .filter-item > input {
-  width: 10%;
+  width: 25px;
 }
