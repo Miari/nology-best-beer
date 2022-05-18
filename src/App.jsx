@@ -4,7 +4,7 @@ import Main from "./containers/Main/Main";
 import Navbar from "./containers/Navbar/Navbar";
 
 function App() {
-  const url = "https://api.punkapi.com/v2/beers?per_page=30";
+  const url = "https://api.punkapi.com/v2/beers?per_page=80";
   const [beers, setBeers] = useState([]);
   const [highABV, setHighABV] = useState(false);
   const [classicRange, setClassicRange] = useState(false);
@@ -40,16 +40,26 @@ function App() {
     setSearchTerm(universalInput);
   };
 
-  const filteredBeers = beers.filter(beer => {
+  const filteredBeers = beers
+  .filter((beer) => {
     const beerNameLower = beer.name.toLowerCase();
     return beerNameLower.includes(searchTerm);
+  }).filter((beer) => {
+    if (ph) return beer.ph && beer.ph < 4;
+    else return beer;
   });
 
   return (
     <div className="app">
-      {<Navbar handleChange={handleChange} handleInput={handleInput} searchTerm={searchTerm}/>}
+      {
+        <Navbar
+          handleChange={handleChange}
+          handleInput={handleInput}
+          searchTerm={searchTerm}
+        />
+      }
 
-      {beers.length && <Main beers={filteredBeers} />}
+      {filteredBeers.length && <Main beers={filteredBeers} />}
     </div>
   );
 }
