@@ -10,6 +10,11 @@ function App() {
   const [classicRange, setClassicRange] = useState(false);
   const [ph, setPh] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const emptyBeer = [{
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Orange_question_mark.svg/2048px-Orange_question_mark.svg.png",
+    name: "Oops, there is nothing to show...",
+    description: "Really, there is no such beer at all!",
+  }];
 
   useEffect(() => {
     getBeers(highABV, classicRange, ph, searchTerm);
@@ -19,7 +24,6 @@ function App() {
     let finalUrl = url;
     if (highABV) finalUrl += "&abv_gt=6.0";
     if (classicRange) finalUrl += "&brewed_before=01-2010";
-    if (ph) console.log("ph filter active"); //TODO
     const response = await fetch(finalUrl);
     const data = await response.json();
     setBeers(data);
@@ -41,13 +45,14 @@ function App() {
   };
 
   const filteredBeers = beers
-  .filter((beer) => {
-    const beerNameLower = beer.name.toLowerCase();
-    return beerNameLower.includes(searchTerm);
-  }).filter((beer) => {
-    if (ph) return beer.ph && beer.ph < 4;
-    else return beer;
-  });
+    .filter((beer) => {
+      const beerNameLower = beer.name.toLowerCase();
+      return beerNameLower.includes(searchTerm);
+    })
+    .filter((beer) => {
+      if (ph) return beer.ph && beer.ph < 4;
+      else return beer;
+    });
 
   return (
     <div className="app">
@@ -60,6 +65,7 @@ function App() {
       }
 
       {filteredBeers.length && <Main beers={filteredBeers} />}
+      {!filteredBeers.length && <Main beers={emptyBeer} />}
     </div>
   );
 }
