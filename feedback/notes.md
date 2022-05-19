@@ -145,7 +145,7 @@ Awesome good going! I can't wait to see what you build next.
 
 ### Constructive
 
-- In public/index.html update `<title>React App</title>`
+In public/index.html update `<title>React App</title>`
 
 You are not using BEM and not using nesting with scss. This is something you need to be aware of that as a React application grows and you create more components you do not want styles from one component being applied to others.
 
